@@ -4,8 +4,65 @@
     <title>Exercise 2</title>
 </head>
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+    <h1>Kalkulator</h1>
+
+    <!-- <form name="kalkulator">
+        <table>
+            <tr>
+                <input type="text" name="tampilkan" id="tampilkan" disabled>
+            </tr>
+            <tr>
+                <td><input type="button" name="satu" value="1" onclick=kalkulator.tampilkan.value += ‘1’”></td>
+                <td><button>2</button></td>
+                <td><button>3</button></td>
+                <td><button>+</button></td>
+            </tr>
+            <tr>
+                <td><button>4</button></td>
+                <td><button>5</button></td>
+                <td><button>6</button></td>
+                <td><button>-</button></td>
+            </tr>
+            <tr>
+                <td><button>7</button></td>
+                <td><button>8</button></td>
+                <td><button>9</button></td>
+                <td><button>x</button></td>
+            </tr>
+            <tr>
+                <td><button>C</button></td>
+                <td><button>0</button></td>
+                <td><button>=</button></td>
+                <td><button>/</button></td>
+            </tr>
+        </table>
+    </form> -->
+
+    <input type="text" id="nilai1"> +
+    <input type="text" id="nilai2"> =
+    <span><p id="tampilkan-nilai">?</p></span>
+
+    <button type="submit" onclick="tampilkanNilai()" >Lihat Hasil</button>
+
+    <p id="tampilkan-teks"></p>
+    <script>
+    
+    function tampilkanNilai() {
+        var nilai1 = document.getElementById('nilai1').value
+        var nilai2 = document.getElementById('nilai2').value
+        var nilaiAkhir = parseInt(nilai1) + parseInt(nilai2)
+
+        document.getElementById('tampilkan-nilai').innerHTML = nilaiAkhir
+
+        if ( nilaiAkhir < 10 ) {
+            document.getElementById('tampilkan-teks').textContent = "Angkanya kurang dari 10"
+        } else if (nilaiAkhir == 10) {
+            document.getElementById('tampilkan-teks').textContent = "Angkanya 10"
+        } else {
+            document.getElementById('tampilkan-teks').textContent = "Angkanya lebih 10"
+        }
+    }
+
+    </script>
 </body>
 </html>
